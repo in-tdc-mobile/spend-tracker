@@ -670,7 +670,7 @@ $('#login_form').submit(function(){
     var username = $('#login_email').val();
     var password = $('#login_password').val();
 
-    $.jStorage.set("pal_user_id", username);
+    //$.jStorage.set("pal_user_id", username);
     var form_data= {
         'username': username,
         'password': password
@@ -704,9 +704,11 @@ $('#login_form').submit(function(){
 });
 
 function register_push_service() {
+    if(window.plugins !=null && window.plugins.pushNotification!=null)
+    {
     var pushNotification = window.plugins.pushNotification;
-    pushNotification.register(successHandler, errorHandler,{"senderID":"1075090837516","ecb":"onNotificationGCM"});
-
+    pushNotification.register(successHandler, errorHandler,{"senderID":"1075090837516","ecb":"onNotificationGCM"});    
+    }
 }
 
 function successHandler (result) {

@@ -238,6 +238,8 @@ function show_top_vendors_by_turnover(year) {
             var app_sum = 0;
             var else_sum = 0;
             var vendor_array = new Array();
+            if(results!=null)
+            {
             for(var i=0; i<results.length; i++) {
                 var temp = new Array;
                 temp.id = results[i]['vendor_id'];
@@ -268,7 +270,9 @@ function show_top_vendors_by_turnover(year) {
                     results_div += "<span class='my-count' style='float:right'> $"+parseFloat(results[i]['INVOICE_AMOUNT_USD']).formatMoney(0, '.', ',')+"</div></a></span></li>";
                     else_count++;
                 }
+            }    
             }
+            
             results_div_con += "</ul>";
             results_div_app += "</ul>";
             results_div += "</ul>";
@@ -617,6 +621,7 @@ function show_years() {
         results_div += "</ul>";
         $('#index_content').html(results_div);
         $('#index_content').show();
+
         // $('#listview').listview();
     }
     setAlerts();
@@ -965,7 +970,7 @@ $('#n_adhoc').click(function  () {
     $('#searched-vendor').hide();
 });
 
-var allAlerts;
+var allAlerts=0;
 var alertDetailInvoiceNo;
 
 function setAlerts(){
@@ -975,23 +980,28 @@ function setAlerts(){
             $(".spinner_index").css('display','inline');
             $(".spinner_index").center();
         },
-        success : function(results) {
-            allAlerts = results;
+        success : function(results) { 
             // var results = JSON.parse(response);
             var results_div = "<ul class='topcoat-list__container'>";
             var vendor_name;
             for(var i=0; i<results.length; i++) {
-                results_div += "<li class='topcoat-list__item'><span class='list_text'>";
-                if (results[i]['message'])
+                if (results[i] !=null && results[i]['message']){
+                    results_div += "<li class='topcoat-list__item'><span class='list_text'>";
                     results_div += '<div onclick="alertDetailSet(\''+results[i]['vendor_invoice_no']+'\')">' + toTitleCase(results[i]['message']) + '</div>'
-                // results_array.push('<a class="footer-button" id="cscemail" href=\"'+cscemail+'\">');
-                results_div += "</li>"
+                    results_div += "</li>" 
+                    allAlerts++;
+                }
+               
             }
             results_div += "</ul>";
             $('.spinner_index').hide();            
             $('#alert-content').html(results_div);
-            $('#alert_count').html(allAlerts.length);
-        }
+            if(allAlerts>0)
+                $('#alert_count').html(allAlerts);
+        }, 
+        error: function() {         
+                $('.spinner_index').hide();
+            }
     });
 }
 

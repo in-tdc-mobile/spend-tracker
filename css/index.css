@@ -9,7 +9,7 @@
 
 .topcoat-text-input,.topcoat-search-input{
 	width: 100%;
-	margin: 2px;
+	margin: 2px 0;
 	min-height: 3rem;
 }
 
@@ -26,10 +26,10 @@
 	height: 28px;
 	width: 28px;
 	position: fixed;
-	top: 15px;
+	top: 11px;
 	/* font-size: 20px; */
 	/*left: 40px;*/
-	right:0px;
+	right:3px;
 	/*  background-color: rgb(60, 36, 102);
 	color: white;
 	-webkit-border-radius: 20px 20px 20px 20px;
@@ -37,7 +37,7 @@
 	border: 1px solid;*/
 	z-index: 1;
 	color: #454545;
-	background-color: #454545;
+	background-color: #f00;
 }
 
 #alert_count { 
@@ -63,8 +63,8 @@
 #alert_count{
 	position: relative;
 	z-index: 4;
-	top: -20px;
-	left: -5px;
+	top: -21px;
+	left: -10px;
 }
 
 #btnAlert{
@@ -73,4 +73,31 @@
 
 .topcoat-icon-button--quiet:hover{
 	background-color: transparent;
+}
+
+#filterDiv>div{
+	background-color: #D7E4FF;
+}
+
+.spinner_index{
+  background-color: #fff;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+}
+
+.spinner_index img{
+	margin: 5px !important;
+}
+
+#btnAlert{
+	margin: 6px 0 0 0;
+}
+
+#btnAlert span{
+	margin: 0 8px 0 0;
+}
+
+#content #owners ~ div#view_title{
+	padding: 0;
 }

@@ -977,7 +977,7 @@ var alertDetailInvoiceNo;
 
 function setAlerts(){
     req = $.ajax({
-        url: 'https://getvesseltracker.com/sdc_vendor_spend_dev/alert_invoice.php',
+        url: 'https://getvesseltracker.com/sdc_vendor_spend_democustomer/alert_invoice.php',
         beforeSend: function() {
             $(".spinner_index").css('display','inline');
             $(".spinner_index").center();

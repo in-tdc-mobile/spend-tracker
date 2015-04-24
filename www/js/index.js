@@ -501,7 +501,7 @@ function show_more_filter(year) {
         return false;
     }
     var filterDiv="<div id='filterDiv' data-role='content' style='display:none;-webkit-box-shadow: inset 0px -2px 10px 1px rgba(0, 0, 0, .3);box-shadow: inset 0px -2px 10px 1px rgba(0, 0, 0, .3);'>";
-    filterDiv+="<div style='padding:10px 0px 10px 10px;'><table style='width:100%' border='0' cellpadding='0' cellspacing='0'><tr><td style='padding-right:5px'>SDC</td>";
+    filterDiv+="<div style='padding:10px 0px 10px 10px;'><table style='width:100% ' border='0' cellpadding='0' cellspacing='0' ><tr><td style='padding-right:5px'>SDC</td>";
     filterDiv+="<td style='padding-right:10px'><select id='cmbSDC' class='topcoat-select' style='width:100%'></select>";
     filterDiv+="</td></tr><tr><td style='padding-right:5px'>Owner</td><td style='padding-right:10px'><div><input id='txtOwner' class='topcoat-search-input' placeholder='Owner' /></div></td></tr>";
     filterDiv+="</td></tr><tr><td style='padding-right:5px'>Vessel</td><td style='padding-right:10px'><div><input id='txtVesselFilter' class='topcoat-search-input' placeholder='Vessel' /></div></td></tr>";

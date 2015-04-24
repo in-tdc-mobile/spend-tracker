@@ -994,7 +994,8 @@ function setAlerts(){
             for(var i=0; i<results.length; i++) {
                 if (results[i] !=null && results[i]['message']){
                     results_div += "<li class='topcoat-list__item'><span class='list_text'>";
-                    results_div += '<div onclick="alertDetailSet(\''+results[i]['vendor_invoice_no']+'\')">' + toTitleCase(results[i]['message']) + '</div>'
+                    // results_div += '<div onclick="alertDetailSet(\''+results[i]['vendor_invoice_no']+'\')">' + results[i]['message'] + '</div>'
+                    results_div += '<div>' + results[i]['message'] + '</div>'
                     results_div += "</li>" 
                     allAlerts++;
                 }

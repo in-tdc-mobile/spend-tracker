@@ -990,6 +990,7 @@ function setAlerts(){
             // var results = JSON.parse(response);
             var results_div = "<ul class='topcoat-list__container'>";
             var vendor_name;
+            allAlerts=0;
             for(var i=0; i<results.length; i++) {
                 if (results[i] !=null && results[i]['message']){
                     results_div += "<li class='topcoat-list__item'><span class='list_text'>";

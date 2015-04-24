@@ -1,4 +1,6 @@
-
+body{
+	color: #000000;
+}
 #view_title{
 	width: 100%;
 	text-align: center;
@@ -76,7 +78,11 @@
 }
 
 #filterDiv>div{
-	background-color: #D7E4FF;
+	/*background-color: #D7E4FF;*/
+}
+
+#filterDiv td {
+	padding-bottom: 10px;
 }
 
 .spinner_index{
@@ -104,4 +110,12 @@
 
 #contracted ul li:nth-child(odd){
 	background-color: #eee;
-};
+}
+
+.topcoat-text-input:focus, .topcoat-text-input--large:focus{
+	color: #000; 
+}
+
+.login_title{
+	margin: 25px
+}

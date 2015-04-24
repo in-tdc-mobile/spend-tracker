@@ -25,11 +25,11 @@
 #alert_count_btn{
 	height: 28px;
 	width: 28px;
-	position: fixed;
+	position: absolute;
 	top: 11px;
 	/* font-size: 20px; */
 	/*left: 40px;*/
-	right:3px;
+	right:-4px;
 	/*  background-color: rgb(60, 36, 102);
 	color: white;
 	-webkit-border-radius: 20px 20px 20px 20px;
@@ -101,3 +101,7 @@
 #content #owners ~ div#view_title{
 	padding: 0;
 }
+
+#contracted ul li:nth-child(odd){
+	background-color: #eee;
+};
